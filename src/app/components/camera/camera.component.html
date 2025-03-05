@@ -31,7 +31,7 @@
       <div *ngFor="let photo of photos; let i = index" class="photo-item">
         <img [src]="photo.url" alt="Foto {{i+1}}" (click)="setMainPhoto(photo)">
         <div class="photo-controls">
-          <button class="delete-btn" (click)="deletePhoto(i)">✖</button>
+          <button class="delete-btn" (click)="deletePhoto(i)">❌</button>
         </div>
         <span class="photo-time">
           {{ photo.timestamp | date:'shortTime' }}
