@@ -1,0 +1,29 @@
+<div class="detail-container" *ngIf="report">
+    <div class="detail-content">
+      <div class="detail-header">
+        <h2>Detalles del Reporte</h2>
+        <button class="btn btn-primary back-btn" (click)="goBack()">
+          Volver a Reportes
+        </button>
+      </div>
+      
+      <div class="detail-body">
+        <div class="detail-item">
+          <strong>ID del Equipo:</strong> {{ report.equipmentId }}
+        </div>
+        <div class="detail-item">
+          <strong>Fecha:</strong> {{ formatDate(report.timestamp) }} {{ formatTime(report.timestamp) }}
+        </div>
+        <div class="detail-item">
+          <strong>Problema:</strong> {{ report.shortProblem }}
+        </div>
+        <div class="detail-item">
+          <strong>Descripción:</strong>
+          <p>{{ report.description }}</p>
+        </div>
+        <div class="detail-image">
+          <img [src]="report.imageUrl" alt="Imagen del reporte">
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,49 @@
+<div class="report-form">
+    <h2>Formulario de Nuevo Reporte</h2>
+    
+    <div class="form-group">
+      <label for="equipmentId">ID del Equipo</label>
+      <input 
+        type="text" 
+        id="equipmentId" 
+        [(ngModel)]="equipmentId" 
+        placeholder="Ej: EQ-2024-001"
+        class="form-control"
+      >
+    </div>
+    
+    <div class="form-group">
+      <div class="image-placeholder">
+        <img [src]="currentImageUrl || 'https://via.placeholder.com/300x150'" alt="Placeholder">
+      </div>
+      <button class="btn btn-primary camera-btn" (click)="captureImage()">
+        <span class="camera-icon">📷</span> Tomar Foto
+      </button>
+    </div>
+    
+    <div class="form-group">
+      <label for="shortProblem">Problema Breve</label>
+      <input 
+        type="text" 
+        id="shortProblem" 
+        [(ngModel)]="shortProblem" 
+        placeholder="Describa brevemente el problema"
+        class="form-control"
+      >
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Descripción del Problema</label>
+      <textarea 
+        id="description" 
+        [(ngModel)]="description" 
+        placeholder="Describa en detalle el problema"
+        class="form-control"
+        rows="4"
+      ></textarea>
+    </div>
+    
+    <button class="btn btn-success save-btn" (click)="saveReport()">
+      Guardar Reporte
+    </button>
+  </div>
